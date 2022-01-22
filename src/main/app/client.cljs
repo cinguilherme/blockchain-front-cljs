@@ -1,13 +1,9 @@
 (ns app.client
   (:require
+   [app.application :refer [app]]
    [com.fulcrologic.fulcro.application :as app]
-   [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
-   [com.fulcrologic.fulcro.dom :as dom]))
-
-(defonce app (app/fulcro-app))
-
-(defsc Root [this props]
-  (dom/div "TODO"))
+   [com.fulcrologic.fulcro.components :as comp]
+   [app.ui :refer [Root]]))
 
 (defn ^:export init
   "Shadow-cljs sets this up to be our entry-point function. See shadow-cljs.edn `:init-fn` in the modules of the main build."
