@@ -1,0 +1,1 @@
+["^ ","~$app",["^ ","~:row",7,"~:col",1,"~:name","^0","~:ns","~$app.client","~:top-ns","^5"],"~$init",["^ ","^1",12,"^2",1,"~:fixed-arities",["~#set",[0]],"^3","^7","^4","^5","^6","^5"],"~$refresh",["^ ","^1",18,"^2",1,"^8",["^9",[0]],"^3","^:","^4","^5","^6","^5"],"~:filename","/Volumes/external_data/Development/fulc-front-app/src/main/app/client.cljs"]
