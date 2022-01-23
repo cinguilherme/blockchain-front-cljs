@@ -3,12 +3,19 @@
             [com.fulcrologic.fulcro.dom :as dom :refer [div p li h4 h5 ul]]))
 
 (defsc Person [this {:person/keys [name age]}]
+  {:initial-state (fn [{:keys [name age] :as params}]
+                    {:person/name name :person/age age})}
   (li
    (h5 (str "name: " name "(age: " age ")"))))
 
 (def ui-person (comp/factory Person {:keyfn :person/name}))
 
 (defsc PersonList [this {:list/keys [label people]}]
+  {:initial-state (fn [{:keys [label]}] 
+                    {:list/label label
+                     :list/people (if (= label "Friends") 
+                                    [(comp/get-initial-state Person {:name "Sally" :age 21})]
+                                    [(comp/get-initial-state Person {:name "Fred" :age 33})])})}
   (div
    (h4 label) 
    (ul
@@ -16,14 +23,11 @@
 
 (def ui-person-list (comp/factory PersonList))
 
-(defsc Root [this props]
-  (let [ui-data {:friends {:list/label "Friends"
-                           :list/people [{:person/name "Fred" :person/age 22}
-                                         {:person/name "Dina" :person/age 31}]}
-                 :enemies {:list/label "Enemies"
-                           :list/people [{:person/name "Troy" :person/age 44}
-                                         {:person/name "Tinna" :person/age 33}]}}]
-    (dom/div
-     (ui-person {:person/name "Gui" :person/age 35})
-     (ui-person-list (:friends ui-data))
-     (ui-person-list (:enemies ui-data)))))
+(defsc Root [this {:keys [friends enemies]}]
+  {:initial-state (fn [params]
+                    {:friends (comp/get-initial-state PersonList {:label "Friends"})
+                     :enemies (comp/get-initial-state PersonList {:label "Enemies"})})}
+
+  (dom/div
+   (ui-person-list friends)
+   (ui-person-list enemies)))
