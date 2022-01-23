@@ -2,12 +2,13 @@
   (:require [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
             [com.fulcrologic.fulcro.dom :as dom :refer [div p li h4 h5 ul]]))
 
-(defsc Person [this {:person/keys [name age]}]
+(defsc Person [this {:person/keys [name age]} {:keys [onDelete]}]
   {:query         [:person/name :person/age]
    :initial-state (fn [{:keys [name age] :as params}]
                     {:person/name name :person/age age})}
   (li
-    (h5 (str "name: " name "(age: " age ")"))))
+    (h5 (str "name: " name "(age: " age ")"))
+    (dom/button {:onClick #(onDelete name)} "X")))
 
 (def ui-person (comp/factory Person {:keyfn :person/name}))
 
@@ -18,10 +19,11 @@
                      :list/people (if (= label "Friends")
                                     [(comp/get-initial-state Person {:name "Sally" :age 21})]
                                     [(comp/get-initial-state Person {:name "Fred" :age 33})])})}
-  (div
-    (h4 label)
-    (ul
-      (map ui-person people))))
+  (let [delete-fn (fn [name] (println "asked to Delete person: " name))]
+    (div
+      (h4 label)
+      (ul
+        (map (fn [p] (ui-person (comp/computed p {:onDelete delete-fn}))) people)))))
 
 (def ui-person-list (comp/factory PersonList))
 
