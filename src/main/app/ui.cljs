@@ -3,27 +3,36 @@
             [com.fulcrologic.fulcro.dom :as dom :refer [div p li h4 h5 ul]]
             [app.mutations :as api]))
 
-(defsc Person [this {:person/keys [name age]} {:keys [onDelete]}]
-  {:query         [:person/name :person/age]
-   :initial-state (fn [{:keys [name age] :as params}]
-                    {:person/name name :person/age age})}
+(defsc Person [this {:person/keys [name age] :as props} {:keys [onDelete]}]
+  {:query         [:person/id :person/name :person/age]
+
+   :ident         (fn [] [:person/id (:person/id props)])
+
+   :initial-state (fn [{:keys [id name age] :as params}]
+                    {:person/id id :person/name name :person/age age})}
   (li
     (h5 (str "name: " name "(age: " age ")"))
     (dom/button {:onClick #(onDelete name)} "X")))
 
-(def ui-person (comp/factory Person {:keyfn :person/name}))
 
-(defsc PersonList [this {:keys [list/label list/people]}]
-  {:query         [:list/label {:list/people (comp/get-query Person)}]
-   :initial-state (fn [{:keys [label]}]
-                    {:list/label  label
+(def ui-person (comp/factory Person {:keyfn :person/id}))
+
+
+(defsc PersonList [this {:keys [list/id list/label list/people] :as props}]
+  {:query         [:list/id :list/label {:list/people (comp/get-query Person)}]
+
+   :ident         (fn [] [:list/id (:list/id props)])
+
+   :initial-state (fn [{:keys [id label]}]
+                    {:list/id     id
+                     :list/label  label
                      :list/people (if (= label "Friends")
-                                    [(comp/get-initial-state Person {:name "Sally" :age 21})]
-                                    [(comp/get-initial-state Person {:name "Fred" :age 33})])})}
-  (let [delete-fn (fn [name]
+                                    [(comp/get-initial-state Person {:id 1 :name "Sally" :age 21})]
+                                    [(comp/get-initial-state Person {:id 2 :name "Fred" :age 33})])})}
+  (let [delete-fn (fn [person-id]
                     (comp/transact!
                       this
-                      [(api/delete-person {:list-name label :name name})]))]
+                      [(api/delete-person {:list/id id :person/id person-id})]))]
     (div
       (h4 label)
       (ul
@@ -35,8 +44,8 @@
   {:query         [{:friends (comp/get-query PersonList)}
                    {:enemies (comp/get-query PersonList)}]
    :initial-state (fn [params]
-                    {:friends (comp/get-initial-state PersonList {:label "Friends"})
-                     :enemies (comp/get-initial-state PersonList {:label "Enemies"})})}
+                    {:friends (comp/get-initial-state PersonList {:id 1 :label "Friends"})
+                     :enemies (comp/get-initial-state PersonList {:id 2 :label "Enemies"})})}
 
   (dom/div
     (ui-person-list friends)
