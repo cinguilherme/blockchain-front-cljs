@@ -27,7 +27,7 @@
    ::pc/output [:list/label {:list/people [:person/id]}]}
   (when-let [list (get list-table id)]
     (assoc list
-      :list/people (mapv (fn [id] {:person/id}) (:list/people list)))))
+           :list/people (mapv (fn [id] {:person/id id}) (:list/people list)))))
 
 (pc/defresolver friends-resolver [env input]
   {::pc/output [{:friends [:list/id]}]}
