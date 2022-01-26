@@ -1,7 +1,7 @@
 {:paths   ["src/main" "resources"]
  :deps    {org.clojure/clojure    {:mvn/version "1.10.3"}
            com.fulcrologic/fulcro {:mvn/version "3.5.9"}
-           com.wsscode/pathom        {:mvn/version "2.2.15"}
+           com.wsscode/pathom        {:mvn/version "2.4.0"}
            com.taoensso/timbre       {:mvn/version "4.10.0"}
            ring/ring-core         {:mvn/version "1.9.4"}
            http-kit/http-kit      {:mvn/version "2.5.3"}}
