@@ -42,5 +42,6 @@
    :initial-state {}}
 
   (dom/div
+   (div "hey!!!!")
     (ui-person-list friends)
     (ui-person-list enemies)))

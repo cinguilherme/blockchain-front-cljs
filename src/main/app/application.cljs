@@ -3,4 +3,5 @@
             [com.fulcrologic.fulcro.networking.http-remote :as http]))
 
 (defonce app (app/fulcro-app
-               {:remotes {:remote (http/fulcro-http-remote {})}}))
+               {:remotes {:remote (http/fulcro-http-remote 
+                                   {:url "http://localhost:3000/api"})}}))

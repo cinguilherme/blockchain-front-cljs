@@ -3,7 +3,8 @@
             [org.httpkit.server :as http]
             [com.fulcrologic.fulcro.server.api-middleware :as server]
             [ring.middleware.content-type :refer [wrap-content-type]]
-            [ring.middleware.resource :refer [wrap-resource]]))
+            [ring.middleware.resource :refer [wrap-resource]]
+            [ring.middleware.cors :refer [wrap-cors]]))
 
 (def ^:private not-found-handler
   (fn [req]
@@ -17,8 +18,11 @@
                         :parser api-parser})                  ; (2)
       (server/wrap-transit-params)
       (server/wrap-transit-response)
+      (wrap-cors :access-control-allow-origin [#".*"]
+                 :access-control-allow-methods [:get :post])
       (wrap-resource "public")                                ; (3)
       wrap-content-type))
+      
 
 (defonce stop-fn (atom nil))
 
