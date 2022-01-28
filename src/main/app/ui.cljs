@@ -11,8 +11,8 @@
    :ident (fn [] [:person/id (:person/id props)])}
 
   (li
-    (h5 (str "name: " name "(age: " age ")"))
-    (dom/button {:onClick #(onDelete id)} "X")))
+   (h5 (str "name: " name "(age: " age ")"))
+   (dom/button {:onClick #(onDelete id)} "X")))
 
 
 (def ui-person (comp/factory Person {:keyfn :person/id}))
@@ -25,12 +25,12 @@
 
   (let [delete-fn (fn [person-id]
                     (comp/transact!
-                      this
-                      [(api/delete-person {:list/id id :person/id person-id})]))]
+                     this
+                     [(api/delete-person {:list/id id :person/id person-id})]))]
     (div
-      (h4 label)
-      (ul
-        (map (fn [p] (ui-person (comp/computed p {:onDelete delete-fn}))) people)))))
+     (h4 label)
+     (ul
+      (map (fn [p] (ui-person (comp/computed p {:onDelete delete-fn}))) people)))))
 
 
 (def ui-person-list (comp/factory PersonList))
@@ -42,6 +42,6 @@
    :initial-state {}}
 
   (dom/div
-   (div "hey!!!!")
-    (ui-person-list friends)
-    (ui-person-list enemies)))
+   (div "hey!!!!!")
+   (ui-person-list friends)
+   (ui-person-list enemies)))

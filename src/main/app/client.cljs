@@ -15,11 +15,11 @@
 (defn ^:export refresh
   "During development, shadow-cljs will call this on every hot reload of source. See shadow-cljs.edn"
   []
-  
+
   (app/mount! app Root "app")
   (df/load! app :friends ui/PersonList)
   (df/load! app :enemies ui/PersonList)
-  (js/console.log "LOADED!")
-  
+  (js/console.log "LOADED!!")
+
   (comp/refresh-dynamic-queries! app)
   (js/console.log "Hot reload"))

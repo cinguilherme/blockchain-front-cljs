@@ -18,8 +18,127 @@
 clj꞉user꞉> 
 ; Jack-in done.
 clj꞉user꞉> 
-#'app.server/middleware
-clj꞉app.server꞉> 
+nil
+clj꞉user꞉> 
+nil
+clj꞉app.parser꞉> 
+#'app.parser/people-table
+clj꞉app.parser꞉> 
+#'app.parser/list-table
+clj꞉app.parser꞉> 
+#'app.parser/person-resolver
+clj꞉app.parser꞉> 
+#'app.parser/api-parser
+clj꞉app.parser꞉> 
+#'app.parser/resolvers
+clj꞉app.parser꞉> 
+#'app.parser/pathom-parser
+clj꞉app.parser꞉> 
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/document-table
+clj꞉app.parser꞉> 
+[] - failed: (<= 1 (count %) MAX_VALUE) in: [:com.wsscode.pathom.connect/output] at: [:com.wsscode.pathom.connect/output :attribute-list] spec: :com.wsscode.pathom.connect/output
+[] - failed: map? in: [:com.wsscode.pathom.connect/output] at: [:com.wsscode.pathom.connect/output :union] spec: :com.wsscode.pathom.connect/output
+; Execution error (ExceptionInfo) at com.wsscode.pathom.connect/resolver (connect.cljc:1560).
+; Invalid options on resolver of app.parser/document-resolver
+clj꞉app.parser꞉> 
+#'app.parser/people-table
+clj꞉app.parser꞉> 
+#'app.parser/document-table
+clj꞉app.parser꞉> 
+#'app.parser/document-resolver
+clj꞉app.parser꞉> 
+#'app.parser/resolvers
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/files-table
+clj꞉app.parser꞉> 
+#'app.parser/people-table
+clj꞉app.parser꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+#'app.parser/resolvers
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/person-resolver
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+:reloading ()
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/people-table
+clj꞉app.parser꞉> 
+#'app.parser/files-table
+clj꞉app.parser꞉> 
+#'app.parser/person-resolver
+clj꞉app.parser꞉> 
+#'app.parser/files-table
+clj꞉app.parser꞉> 
+nil
+clj꞉app.parser꞉> 
+#'app.parser/people-table
+clj꞉app.parser꞉> 
+#'app.parser/document-table
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/person-resolver
+clj꞉app.parser꞉> 
+#'app.parser/document-resolver
+clj꞉app.parser꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+#'app.parser/resolvers
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/person-resolver
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/person-resolver
+clj꞉app.parser꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
+:reloading (app.parser app.server user)
+#function[clojure.lang.AFunction/1]
+clj꞉user꞉> 
+#'app.parser/files-resolver
+clj꞉app.parser꞉> 
 :reloading (app.parser app.server user)
 #function[clojure.lang.AFunction/1]
 clj꞉user꞉> 

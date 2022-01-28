@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/fulc-front-app.iml" filepath="$PROJECT_DIR$/fulc-front-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blockchain-front-cljs.iml" filepath="$PROJECT_DIR$/blockchain-front-cljs.iml" />
     </modules>
   </component>
 </project>
