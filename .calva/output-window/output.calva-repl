@@ -15,130 +15,21 @@
 ;   - `alt+up` and `alt+down` traverse up and down the REPL command history
 ;      when the cursor is after the last contents at the prompt
 ;   - Clojure lines in stack traces are peekable and clickable.
-clj꞉user꞉> 
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
 clj꞉user꞉> 
 nil
 clj꞉user꞉> 
-nil
-clj꞉app.parser꞉> 
-#'app.parser/people-table
-clj꞉app.parser꞉> 
-#'app.parser/list-table
-clj꞉app.parser꞉> 
-#'app.parser/person-resolver
-clj꞉app.parser꞉> 
-#'app.parser/api-parser
-clj꞉app.parser꞉> 
-#'app.parser/resolvers
-clj꞉app.parser꞉> 
-#'app.parser/pathom-parser
-clj꞉app.parser꞉> 
+("src/dev" "src/main")
+clj꞉user꞉> 
+#'user/start
+clj꞉user꞉> 
+#'user/restart
+clj꞉user꞉> 
 #function[clojure.lang.AFunction/1]
 clj꞉user꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/document-table
-clj꞉app.parser꞉> 
-[] - failed: (<= 1 (count %) MAX_VALUE) in: [:com.wsscode.pathom.connect/output] at: [:com.wsscode.pathom.connect/output :attribute-list] spec: :com.wsscode.pathom.connect/output
-[] - failed: map? in: [:com.wsscode.pathom.connect/output] at: [:com.wsscode.pathom.connect/output :union] spec: :com.wsscode.pathom.connect/output
-; Execution error (ExceptionInfo) at com.wsscode.pathom.connect/resolver (connect.cljc:1560).
-; Invalid options on resolver of app.parser/document-resolver
-clj꞉app.parser꞉> 
-#'app.parser/people-table
-clj꞉app.parser꞉> 
-#'app.parser/document-table
-clj꞉app.parser꞉> 
-#'app.parser/document-resolver
-clj꞉app.parser꞉> 
-#'app.parser/resolvers
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/files-table
-clj꞉app.parser꞉> 
-#'app.parser/people-table
-clj꞉app.parser꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-#'app.parser/resolvers
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/person-resolver
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-:reloading ()
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/people-table
-clj꞉app.parser꞉> 
-#'app.parser/files-table
-clj꞉app.parser꞉> 
-#'app.parser/person-resolver
-clj꞉app.parser꞉> 
-#'app.parser/files-table
-clj꞉app.parser꞉> 
-nil
-clj꞉app.parser꞉> 
-#'app.parser/people-table
-clj꞉app.parser꞉> 
-#'app.parser/document-table
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/person-resolver
-clj꞉app.parser꞉> 
-#'app.parser/document-resolver
-clj꞉app.parser꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-#'app.parser/resolvers
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/person-resolver
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/person-resolver
-clj꞉app.parser꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
-#function[clojure.lang.AFunction/1]
-clj꞉user꞉> 
-#'app.parser/files-resolver
-clj꞉app.parser꞉> 
-:reloading (app.parser app.server user)
+#'app.resolvers/person-resolver
+clj꞉app.resolvers꞉> 
+:reloading (app.tables app.resolvers app.parser app.server user)
 #function[clojure.lang.AFunction/1]
 clj꞉user꞉> 
