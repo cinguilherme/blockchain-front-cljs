@@ -7,7 +7,7 @@
             [ring.middleware.cors :refer [wrap-cors]]))
 
 (def ^:private not-found-handler
-  (fn [req]
+  (fn [_]
     {:status  404
      :headers {"Content-Type" "text/plain"}
      :body    "Not Found"}))
@@ -22,7 +22,7 @@
                  :access-control-allow-methods [:get :post])
       (wrap-resource "public")                                ; (3)
       wrap-content-type))
-      
+
 
 (defonce stop-fn (atom nil))
 
