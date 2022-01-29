@@ -33,3 +33,4 @@ clj꞉app.resolvers꞉> 
 :reloading (app.tables app.resolvers app.parser app.server user)
 #function[clojure.lang.AFunction/1]
 clj꞉user꞉> 
+; nREPL Connection was closed

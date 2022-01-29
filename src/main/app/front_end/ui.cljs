@@ -1,4 +1,4 @@
-(ns app.ui
+(ns app.front-end.ui
   (:require [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
             [com.fulcrologic.fulcro.dom :as dom :refer [div p li h4 h5 ul]]
             [app.mutations :as api]))
@@ -42,6 +42,6 @@
    :initial-state {}}
 
   (dom/div
-   (div "hey!!!!!")
+   (div "hey!!")
    (ui-person-list friends)
    (ui-person-list enemies)))

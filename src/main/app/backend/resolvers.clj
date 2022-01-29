@@ -1,7 +1,7 @@
-(ns app.resolvers
+(ns app.backend.resolvers
   (:require [com.wsscode.pathom.connect :as pc :refer [defresolver]]
             [taoensso.timbre :as log]
-            [app.tables :as t]))
+            [app.backend.tables :as t]))
 
 (defresolver person-resolver [_ {:person/keys [id]}]
   {::pc/input  #{:person/id}

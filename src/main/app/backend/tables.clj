@@ -1,4 +1,4 @@
-(ns app.tables)
+(ns app.backend.tables)
 
 (def people-table
   {1 {:person/id 1 :person/name "Sally" :person/age 32
